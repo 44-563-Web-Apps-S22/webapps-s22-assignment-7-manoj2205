@@ -44,6 +44,7 @@
     <br> <br>
     <button onclick="fetchItem()"> Fetch</button>
     <button onclick="zap()"> Zap values</button>
+    <button onclick="RemoveDuplicate()">remove duplicates</button>
 
 
 </body>
@@ -80,6 +81,19 @@
             }
         }
     }
+    function RemoveDuplicate() {
+        queueItems = document.getElementsByClassName('queue');
+        var len = queueItems.length
+        for (let i = 0; i < len; i++) {
+            for (let j = i + 1; j < len - 1; j++) {
+                if (queueItems[i].innerHTML == queueItems[j].innerHTML) {
+                    queueItems[j].remove();
+                    
+                }
+            }
+        }
+    }
+
 </script>
 
 </html>

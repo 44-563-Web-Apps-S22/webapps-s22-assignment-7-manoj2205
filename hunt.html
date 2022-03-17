@@ -17,6 +17,7 @@
 <div class="d-inline p-2 bg-primary text-black centre">Click on the squares to search for bird.</div>
 <div class="d-inline p-2 bg-success text-white" id="shakes"> Number of shakes is zero.</div>
 <div class="d-inline p-2 bg-warning text-white" id="score"> Location score is unknown.</div>
+<button type="button" class="btn btn-primary" onclick="ResetGame()"> Restart Game </button>
 </div>
 <br>
 
@@ -90,6 +91,11 @@ let value4 = generateRandomInteger(25);
          document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
        document.getElementById("score").innerHTML="The score is "+ locationScore(position, birdlLocation); 
     }
+    function ResetGame(){
+            shakeCount = 0;
+            document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
+            birdLocation = Math.floor(Math.random() * 25);
+        }
   function locationScore (pos1, pos2)
   {
     var row1, row2, col1, col2
@@ -127,5 +133,6 @@ let value4 = generateRandomInteger(25);
          return 0
 
        }
+
 </script>
 </html>
